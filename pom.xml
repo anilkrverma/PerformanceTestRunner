@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>PerformanceTesting</groupId>
+    <artifactId>PerformanceTestingMadeSimple</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <threadcount>3</threadcount>
+        <loop>2</loop>
+        <ramptime>2</ramptime>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.lazerycode.jmeter</groupId>
+                <artifactId>jmeter-maven-plugin</artifactId>
+                <version>2.9.0</version>
+                <executions>
+                    <execution>
+                        <id>jmeter-tests</id>
+                        <goals>
+                            <goal>jmeter</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <generateReports>true</generateReports>
+                    <testResultsTimestamp>true</testResultsTimestamp>
+                    <appendResultsTimestamp>true</appendResultsTimestamp>
+                    <resultsFileNameDateFormat>dd-MMM-yy</resultsFileNameDateFormat>
+                    <resultsFileFormat>xml</resultsFileFormat>
+                    <skipTests>false</skipTests>
+                    <propertiesUser>
+                        <threadcount>${threadcount}</threadcount>
+                        <loop>${loop}</loop>
+                        <ramptime>${ramptime}</ramptime>
+                    </propertiesUser>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
