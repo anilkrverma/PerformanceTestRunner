@@ -29,8 +29,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <generateReports>true</generateReports>
-                    <testResultsTimestamp>true</testResultsTimestamp>
+                    <generateReports>false</generateReports>
+                    <testResultsTimestamp>false</testResultsTimestamp>
                     <appendResultsTimestamp>true</appendResultsTimestamp>
                     <resultsFileNameDateFormat>dd-MMM-yy</resultsFileNameDateFormat>
                     <resultsFileFormat>xml</resultsFileFormat>
